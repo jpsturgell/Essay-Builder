@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Text Check - Python on Google Cloud Platform</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1>Text Checker</h1>
+    <form action="post">
+        <textarea name="textCheck" id="textCheck" cols="30" rows="10"></textarea>
+        <button type="submit" id="submitBtn">submit</button>
+    </form>
+
+    <div>
+        <h3>errors: </h3>
+        {% for key in responseText.matches[0] %}
+        <ul>
+            <li>{{key}}</li>
+        </ul>
+        {% endfor %}
+    </div>
+
+    <div>
+        <h3>Response Text:</h3>
+        <p>{{responseText}}</p>
+    </div>
+  </body>
+</html>
